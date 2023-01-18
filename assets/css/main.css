@@ -72,6 +72,11 @@ input, select, textarea {
 	appearance: none;
 }
 
+.caption-txt { 
+	position: relative; 
+	
+}
+
 /* Basic */
 
 	@-ms-viewport {
