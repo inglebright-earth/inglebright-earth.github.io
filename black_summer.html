@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Zak's e-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Portfolio</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="academic.html">Academic Projects</a></li>
+											<li><a href="personal.html">Personal Projects</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>The Black Summer project (2022)</h2>
+							
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<section>
+									<p>One of the main driving forces behind taking a couple of years out to study before my postgraduate degree was to improve my skills in data presentation; the reason for this was that I was unhappy with how I visualised my data during my undergraduate dissertation. As I knew, there were so many different ways to display my data than simply using Microsoft excel. Therefore, I decided to challenge myself by learning python, and honing my cartographic skills in my spare time to explore its capabilities in visualising data.</p>
+									<div class="col-6"><span class="image fit"><img src="images/personal/Black_summer.jpeg" alt="" /></span></div>
+
+									<p><span class="image left"><img src="images/personal/interannual.jpg" alt="" /></span>
+										<h4>Background</h4>Regional fire regimes are an integral part of the Australian landscape, where many species of plants and animals has evolved to depend on these fire events for germination, food availability and for regeneration alike. However, since European colonisation of Australia (1788 C.E.), its landscape and management has changed considerably from place to place, causing a knock-on-effect to the risk and severity of bushfires. The Australian 2019/20 Black Summer Bushfires became the worst-case scenario of this knock-on-effect to date. Where a total area of 73,600 square miles of land was burned (almost three times the size of the Australian state of Tasmania), and a conservative estimate of 3 billion animals were lost during and after these fires. 
+										<br><h4>Rational</h4>It sent down chills when first hearing about these stats, but soon followed a fascination, making me question: how and why such types of events occur. This led me to focus on these fundamentals’ questions during my undergraduate dissertation, where I assessed the role of human activity as a driver for wildfire-mediated vegetation disturbance in Western Tasmania, Australia. It was for this reason why I wanted to incorporate the Australian 2019/20 Black Summer Bushfires into my independent learning and explore different ways to model fire-related instances. <br></p>
+										
+										<p><span class="image right"><img src="images/personal/Area_burned.jpg" alt="" /></span>
+											<h4>Methods</h4>My first attempt at modelling bushfires was through maps, as it serves to help readers understand how prevalent, and in this case, severe these bushfires burned across the landscape. <a href="https://www.qgis.org/en/site/ "> QGIS </a> was used for the creation of this map, where a graph was added to compliment the users visual understanding of the map. <a href="https://seaborn.pydata.org/index.html"> Seaborn </a> is a library that was subsequently used, as it allows users to create attractive and statistical graphics. This open-source tool is a big advantage for modelling fire events, due to its capabilities at visualising time-series data. In this instance, the <a href="https://seaborn.pydata.org/generated/seaborn.heatmap.html"> seaborn.heatmap </a> function was used to visualise this data type in an easy-to-understand manner, and assess the year-to-year, and month-by-month variability of bushfires in a single model. Given the 2019/20 fire season was one of the most extreme fire events in the last 60 years, would have meant displaying a time-series with these extreme values in area burned difficult. However, <a href="https://matplotlib.org/"> matplotlib </a> versatility came through, enabling the user to break up the y-axis into three different sections, and therefore preventing the graph from becoming skewed.  </p>
+								</section>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/zak-inglebright/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/inglebright-earth" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:inglebright.earth@gmail.com?subject=subject text" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,5 @@
+https://bookdown.org/lexcomber/GEOG3195/spatial-models---geographically-weighted-regression.html#evaluating-the-results-1
+
+https://crd230.github.io/gwr.html
+
+https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/how-multiscale-geographically-weighted-regression-mgwr-works.htm

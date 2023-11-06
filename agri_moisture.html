@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Zak's e-Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Portfolio</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="academic.html">Academic Projects</a></li>
+											<li><a href="personal.html">Personal Projects</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>A comparison of moisture between two distinct agricultural settings (Forested vs. Open agriculture) - 2023</h2>
+
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<section>
+									<h3>Content</h3>
+									<ul>
+										<ol>
+											<li><a href="#Aims&Rational"><h4>Aims & Rational</h4></a></li>
+								     	    <li><a href="#StudyArea"><h4>Study Area</h4></a></li>
+									        <li><a href="#Method"><h4>Methodology</h4></a>
+												<ol>
+													<li><a href="#Method1"><h5>Landuse & Landcover classification</h5></a></li>
+									                <li><a href="#Method2"><h5>Accuracy Assessment of Landuse & Landcover classification</h5></a></li>
+									                <li><a href="#Method3"><h5>Normalised Difference Moisture Index (NDMI) Extraction</h5></a></li>
+									                <li><a href="#Method4"><h5>Correlates of the NDMI Changes</h5></a></li>
+									                <li><a href="#Method5"><h5>Primary Model Selection Process</h5></a>
+										            <ol>
+														<li><a href="#Method5.1"><h6>ORDINARY LEAST SQUARE (OLS) REGRESSION AND AUTOCORRELATED RESIDUALS</h6></a></li>
+												        <li><a href="#Method5.2"><h6>GEOGRAPHICALLY WEIGHTED REGRESSION (GWR) AND AUTOCORRELATED RESIDUALS</h6></a></li>
+												        <li><a href="#Method5.3"><h6>MULTISCALE GEOGRAPHICALLY WEIGHTED REGRESSION (MGWR) AND AUTOCORRELATED RESIDUALS</h6></a></li>
+												        <li><a href="#Method5.4"><h6>CHOICE OF PRIMARY MODEL</h6></a></li>
+												        <li><a href="#Method5.5"><h6>INVESTIGATING MULTICOLLINEARITY IN THE PRIMARY MODEL</h6></a></li>
+										            </ol>
+											        </li>
+													<li><a href="#Method6"><h5>Site comparison and visualisation</h5></a>
+
+												</ol>
+											</li>
+									        <li><a href="#Results"><h4>Results</h4></a>
+												<ol>
+													<li><a href="#Result1"><h5>Comparative Boxplot Analysis</h5></a></li>
+									                <li><a href="#Result2"><h5>Terrain Dynamics</h5></a></li>
+													<li><a href="#Result3"><h5>Site comparison of local coefficients</h5></a></li>
+												</ol>
+											</li>
+									        <li><a href="#Discussion"><h4>Discussion</h4></a>
+												<ol>
+													<li><a href="#Disccusion1"><h5>Differences in Moisture</h5></a></li>
+									                <li><a href="#Disccusion2"><h5>Topographical influence</h5></a></li>
+													<li><a href="#Disccusion3"><h5>Challenges</h5></a></li>
+													<li><a href="#Disccusion4"><h5>Recommendations</h5></a></li>
+												</ol>
+											</li>
+									        <li><a href="#Conclusion"><h4>Conclusion</h4></a></li>
+										</ol>
+									</ul></h3>
+									<h3 id="Aims&Rational">Aims & Rationale</h3>
+									<p>My rationale for undertaking this investigation is to examine the potential pitfalls and challenges of my master thesis, which will 
+										focus on examining whether agroforestry practices could potentially mitigate wildfires in tropical regions by demonstrating higher
+										 resilience to drought conditions than monocultures. Wildfires, predominantly human-induced, are strongly associated with
+										 agricultural practices such as slash-and-burn agriculture, particularly in tropical and subtropical latitudes <a href="https://journals.sagepub.com/doi/full/10.1177/1940082917737207">(Juárez-Orozco et al., 2017)</a>. 
+										 This emphasises the urgent need for improved land management practices. I hypothesise that implementing agroforestry practices (e.g., integrating trees
+										 and shrubs with crops) could reduce higher rates of moisture loss and thus act as a barrier for wildfires. The scarcity of existing
+										 studies on this topic highlights the novelty and significance of this research. <br> 
+										 
+										 <br> Therefore, a preliminary investigation is a critical step forward in shaping my understanding of my forthcoming master’s thesis, 
+										 providing an overview of the subject and determining potential challenges ahead. Thus, the central aim of this investigation is to 
+										 examine moisture levels between two distinct agricultural areas, forested agriculture (>60% forest cover) vs. open-spaced agriculture 
+										 (<20% forest cover) and assess the role of topography on moisture retention. The particular emphasis on the role of topography and forest 
+										 cover is due to their key influence in driving the behaviour of soil moisture <a href="https://www.sciencedirect.com/science/article/pii/S2095633922000594">(Liu et al.,2023)</a>. 
+										 Comparative analysis at the local level could provide insight into how topographic features modulate moisture levels within different agricultural settings. For this investigation, the 
+										 following objectives will be followed: (1) Examine and compare moisture levels between the two differing agricultural areas, (2) 
+										 Investigate the role of topographical factors influencing soil moisture dynamics within these areas, and (3) Identify the challenges 
+										 faced during this investigation, and discuss their potential implications for the upcoming master thesis, and propose solutions to 
+										 mitigate these concerns. </p>
+
+
+
+										<figure><span class="image right"><img src="images/personal/finca_lodge_agro_method.png" alt="" />
+											<figcaption> <p class="caption-txt"><b>Figure 1. </b>Structural composition of the Finca Luna Nueva Lodge, Costa Rica. Sourced: <a href="https://www.porvenirdesign.com/blog/2021/3/2/syntropiccacaocostarica">Porvenir Design.</a></p></span> </figcaption>
+										</figure>
+
+										<h3 id="StudyArea">Study Area</h3>
+										<p>The area surrounding the town of San Isidro, located in the Western part of the Alajuela province in Costa Rica, was chosen as the primary 
+											study location. This region is characterised by a mix of flatlands and mountainous terrains, with a wet tropical climate. The area receives 
+											approximately 4,000mm of annual rainfall with a dry season usually spanning from January to May <a href="https://www.researchgate.net/publication/308777656_Costa_Rican_Ecosystems_A_Brief_Summary">(Kappelle. M, 2023) </a> 
+											- conditions that significantly impact 
+											wildfire activity and moisture availability. I have identified two contrasting sites within this region. Site A is an area surrounding the <a href="https://www.porvenirdesign.com/blog/2021/3/2/syntropiccacaocostarica">Finca Luna Nueva Lodge</a>, known for its regenerative farming practices and covered by 61.8% forest cover. Site B, approximately 10km to the East, mostly 
+											consists of sparse vegetation and open fields, with 19.4% forest cover. Both study sites are approx. 6500m<sup>2</sup> in area.</p>
+										<div class="col-6"><span class="image fit"><img src="images/personal/costa_rica_overview_map_6.png" alt="" /><p class="caption-txt"><b>Figure 2. </b>Overview of the general location of the two study areas, highlighting the difference in the disparity  forest cover, located in the Alajuela Province, Costa Rica.</p></span></div>
+										
+										<figure><span class="image right"><img src="images/personal/cloud_contamination.jpg" alt="" />
+											<figcaption> <p class="caption-txt"><b>Figure 3. </b>Removal of cloud contamination undertaken on QGIS 3.28.</p></span> </figcaption>
+										</figure>
+				        				<h3 id="Method">Methodology</h3>
+										<h4 id="Method1">Landuse & landcover classification</h4>
+										<p>Sentinel-2 data was obtained during the dry season at a 20m resolution on the 10<sup>th</sup> February 2020. Due to high cloud contamination covering this study area, time-series analysis was
+											unable to be performed on a seasonal and/or yearly basis in either the previous or proceeding years. Initial steps were taken in QGIS 3.28, using the Semi-Automatic Classification Plugin
+											to eliminate cloud contamination, shadow effects, and cropping the data to the desired extent. This was to avoid the high computational demand on R studios (version 4.2.2). I then defined five distinct landcover classifications 
+											(agriculture, bare-ground, built-up areas, forest cover, water bodies) on the GIS platform via various band combinations, creating a robust sample set of 50 polygons for each landcover 
+											type. Using the workflow of <a href="https://rspatial.org/raster/rs/5-supclassification.html">Ghosh and Hijmans (2021)</a>, a Random Forest (RF) algorithm was employed on the R environment. A robust machine learning method known for its high performance, generalisability, and ability to handle high-dimensional data
+											to classify landcover types. This choice was further influenced by my previous familiarity with machine learning techniques gained through the PgDip data science programme. </p>
+										<span class="image fit"><img src="images/personal/SuperV_Classification.png" alt="" /><p class="caption-txt"><b>Figure 4. </b>Dislayed output of the random forest model for the supervised classification of our study areas, defined by five distinct landcover types.</p></span>
+
+										<h4 id="Method2">Accuracy assessment of landuse & landcover classification</h4>
+										<div class="col-1"><span class="image fit"><img src="images/personal/ConfusionMatrix_RF_classification.png" alt="" /><p class="caption-txt"><b>Figure 5. </b>Confusion matrix and overall statistics of the random forest supervised classification model.</p></span></div>
+											
+										<p> Accuracy assessment was evaluated with the confusion matrix. The confusion matrix allows us to assess the overall accuracy of the classification procedure. It does this by outputting
+											four cells, true positive (TP), true negative (TN), false positive (FP), and false negative (FN). TP means the predicted and actual values are positive. TN means the predicted and actual 
+											values are negative. FP means the predicted value is positive, but the actual value is negative. FN means the predicted value is negative, but the actual value is positive <a href=”https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62 ">(Narkhede. S, 2018)</a>. Overall accuracy
+											showed a value of 97.32% (CI: 94.78%, 98.83%) and a Kappa statistic of 0.9554, which demonstrated the model's high performance. The highest omission error occurred in built-up areas (0.25), due
+											to confusion with bare ground coverage. This was followed by bare ground (0.14), due to confusion with agriculture and built-up areas. Similarly, built-up areas and bare ground showed the
+											highest commission errors (0.14 and 0.13, respectively), confused mainly by each other. </p>
+										
+										<h4 id="Method3">Normalised Difference Moisture Index (NDMI) extraction</h4>
+										<p> The NDMI was created from the Near-Infrared (NIR), and Short-wave infrared (SWIR) channels of the Sentinel-2 at 20m resolution, to detect moisture levels in the vegetation. </p>
+											<span class="img-container"><img src="images/personal/ndmi_formula.png" alt=""/></span> </br> 
+											Agriculture class-related-pixels were singled out of the LULC raster and assigned its own variable to become vectorised in R studios. However, due to the high computational cost of this task on a single-threaded 
+											language such as R, the agriculture raster was polygonised on the QGIS platform. Returning to R, a randomised point sampling technique (n = 1000) was performed on both sites. Each
+										   of the 1000 sampling units was used to extract the NDMI at the pixel level within the boundaries of the polygonised agricultural layer. These point values were then analysed in a 
+										   comparative box plot, which presents an illustrative comparison of moisture levels in the agricultural areas of both sites. </p>										
+										   <div class="col-6"><span class="image fit"><img src="images/personal/cr_ndmi_comparison_map.png" alt="" /><p class="caption-txt"><b>Figure 6. </b>Comparison of the Normalized Difference Moisture Index (NDMI) between two agricultural sites: a) Forested Agriculture and b) Open-Spaced Agriculture.</p></span></div>
+										
+										<h4 id="Method4">Correlates of the NDMI changes</h4>
+										<p> Topographical variables (slope, aspect, and flow direction) were derived from digital elevation models (Shuttle Radar Topography Mission) at 30m resolution. These variables were extracted
+										 using the raster::terrain function, and stored as four separate variables. These variables were then transferred to QGIS to evaluate the terrain dynamics between site locations. Several spatial 
+										 regression analyses were then performed to understand the spatial distribution of moisture and its associated effects within the chosen study areas. </p> 
+
+										<h4 id="Method5">Primary model decision</h4> 
+										<p>Ensuring geographically weighted regression (GWR) directly addresses the primary goals of the analysis is a fundamental process for
+										 this type of analysis. If spatial influences are evident in the data, then GWR can be considered, however, this requires evidence of alternative 
+										models, specifically ones with fixed coefficients such as Ordinary Least Square (OLS), being unsuitable. To fulfil this objective, the following methods from <a href= "https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"> Comber et al. (2022) </a> are employed:
+										<br>
+										<ol>
+											<li>Ordinary Least Square (OLS) regression should be undertaken, and results compared. </li>
+										    <li>Parameter selection for GWR should be pursued and examined between individual site locations.  </li>
+										    <li>A multiscale geographically weighted regression (MGWR) should be carried out and the variable-specific bandwidths evaluated. </li>
+										    <li>Based on findings (1), (2), and (3), GWR and MGWR should be chosen for further analysis provided local multicollinearity is accounted for.</li>
+										</ol>
+										<br>
+										The OLS regression assumes data to be stationary and therefore shoulders the thinking of fixed data relationships between the independent and dependent variables according to <a href="https://www.sciencedirect.com/science/article/abs/pii/S1364815210002008"> Li et al., (2010)</a>. Thus, providing a
+										 baseline in which GWR and other spatial regression models can be compared. GWR and MGWR are local models which consider spatial heterogeneity within the dataset, allowing coefficients to
+										 vary over space. A limiting factor of a standard GWR is the assumption that relationships at the local level operate at the same spatial scale. This best-on-average approach can negate
+										 the reality of relationships in spatially heterogeneous areas by causing an under-or-over estimation of scale between the target and explanatory variables. The MGWR estimates bandwidth 
+										for individual explanatory variables <a href= "https://bookdown.org/lexcomber/GEOG3195/spatial-models---geographically-weighted-regression.html"> (Comber. L, 2023)</a>, thus allowing response-predictor relationships to vary spatially across different scales. Ensuring the spatial heterogeneity inherent to topographical
+										 variables is captured by the model. <br>
+										<br>All three regression models should also investigate for the presence of spatially autocorrelated model residuals. Followed by an assessment of the spatial dependencies between the 
+										response-predictor relationships. Thus, further spatial regression models are required, spatial autocorrelation (& Moran’s <i>I</i> test), and spatial autoregressive model.  For this
+										 study, spatial considerations are integrated by first subsetting the residuals of the model and subsequently transformed into spatial formats (if necessary). To explore and address 
+										spatial autocorrelation, a distance-based neighbours list is constructed, and a spatial weights matrix is subsequently derived <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"> (Comber et al., 2022)</a>. The primary model will be
+										 selected based on preliminary assessments of the strength of association using Moran's <i>I</i> estimates, <i>p</i>-values for statistical significance, R<sup>2</sup>, and the Akaike
+										 Information Criterion (AIC) scores for each evaluated model. </p>
+										
+										
+										<h5 id="Method5.1"> Ordinary Least Square (OLS) regression and autocorrelated residuals </h5>
+										<p> The first step is to conduct a global linear regression. This is due to how GWR, and MGWR being local models cannot take precedence over global models such as OLS as inferential tools <a href= "https://bookdown.org/lexcomber/GEOG3195/spatial-models---geographically-weighted-regression.html"> (Comber. L, 2023)</a>. The
+										 aim of this regression analysis is to understand how and if predictors have influence over the response variable, specifically: (a) which relationships are statistically significant, (b)
+										 evidence to suggest the use of autocorrelated error term, and (c) the overall fit of the linear regression model. <i>Table 1</i> summarises the results obtained from spatial autoregressive 
+										models (using the <i>spatialreg::errorsarlm function</i>) to determine the statistical significance of the relationships between predictor and response variables. The OLS models for both Site A
+										 and Site B provide a mixture of mostly dominant insignificant predictor responses to NDMI. For Site A, only the <i>Flow direction</i> is statistically significant (<i>p</i>-value = 0.03217) with a negative coefficient estimate of -0.000*. 
+										 For Site B, none of the predictors showed statistical significance. The <i>Intercepts</i>  for Site A and Site B are 0.267 (p
+										 < 2e-16) and 0.338 (p < 5.138e-07), respectively, indicating the expected NDMI value when all other predictors are set to zero. </p>
+										
+										 <div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/ols_autoregressive_model_coefficient.jpg" alt="" /><p class="caption-txt"> <b>Table 1. </b>Linear regression SAR-error estimates and their significance (<i>p-value</i>).</p></span></div>
+
+										<p> Spatial autocorrelation of the OLS residuals was assessed by defining the spatial weight matrix to create estimates of Morans’ <i>I</i> and their significance (<i>Table 2</i>), under the
+										 assumption of spatial randomness and independence of residual distribution. Both sites for Morans’ <i>I</i>  are significant, where patterns of spatial structures across locations are shown
+										 to be positively spatial autocorrelated. With not much variation being exhibited between sites. <br>
+										
+										<i>Table 2</i>, also summarises the performance statistics of the OLS model between both site locations, using AIC and R<sup>2</sup> values. AIC is an in-sample statistic reflecting the model's fit, 
+										given the complexity of the model. R<sup>2</sup> is an additional in-sample statistic, representing prediction accuracy of the explained variance of the dependent. </p>
+										
+										<div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/ols_autocorrelation_and_fit.jpg" alt="" /><p class="caption-txt"><b>Table 2. </b> Residual autocorrelation measures using Moran’s <i>I</i> and fit statistics (AIC and R<sup>2</sup>) from both study locations.</p></span></div>
+										
+										
+										<p>Here, measures of weak model fit (R<sup>2</sup> < 0.01), coupled with strong and significant levels of spatial autocorrelation in residuals, give an indication of the potential suitability of GWR.
+										 OLS as seen in <i>Table 2</i>, has failed to capture much of the explained variance of the target variable, most likely due to the spatial characteristics inherent to our independent and
+										 dependent variables (e.g., topography, and vegetation moisture). </p> 
+										
+										<h5 id="Method5.2">Geographically weighted regression (GWR) and autocorrelated residuals</h5>
+										<p>For the GWR analysis at this stage, only the following need investigation: (i) the GWR model parameters (ii) evidence for residual autocorrelation, and (iii) the fit of GWR itself.
+										Model parameters were selected on a site-by-site basis, due to the heterogeneous nature of our study two areas (forested vs. open-space agricultural fields). Separate bandwidths were
+										 then chosen (via the spgwr::gwr.sel function) through several models. Attributing its uses to the GWR model sensitivity to its bandwidth selection <a href= "https://pubs.aip.org/aip/acp/article/2014/1/020081/724541/Parameter-estimation-of-geographically-weighted"> (Soemartojo et al., 2014) </a>: Model 1) cross-validating bandwidth using the
+										 Gaussian weighting function, Model 2) cross-validating bandwidth using the Bisquare weighting function, and Model 3) cross-validating bandwidth using the Gaussian weighting function 
+										alongside an adaptive kernel. All three models were fitted using the spgwr::gwr() function and assessed for each site. <br>
+										
+										Examining <i>Table 3</i>, we observe that five out of the six models across both sites exhibit statistically significant spatial autocorrelation, albeit with very weak magnitudes. 
+										Specifically, Morans' <i>I</i> value are close to zero, suggesting minimal spatial autocorrelation. <i>Model 3</i> in Site B is the only model where the Moran's <i>I</i> estimate is not 
+										statistically significant, as indicated by its <i>p</i>-value of 0.447. This outcome implies that five of the GWR models might not have adequately addressed spatial autocorrelation in the
+										predictor-response dynamics. <br>
+										
+										For site A in <i>Table 3</i>, the highest Quasi-global R<sup>2</sup> value occurred in <i>Model 1</i>  (0.469), followed by <i>Model 3</i> (0.466), then by <i>Model 2</i>  (0.388). <i>Model 1</i>
+										  exhibited the lowest AIC score (-3395.32), indicating a favourable balance between the model complexity and fit. Despite a slight difference in the R<sup>2</sup> value between <i>Model 1</i>  and
+										 <i>Model 3</i>, <i>Model 3</i> fails to compete on the AIC criteria (-3382.647), with <i>Model 2</i> dropping behind with a value of -3289.641. Site B shows more distinctive differences
+										 between the model parameters, with higher Quasi-global R<sup>2</sup> value attributing itself to <i>Model 1</i> (0.629), then after by <i>Model 2</i> (0.475) and <i>Model 3</i> (0.466). AIC again
+										 highlights <i>Model 1</i> as having the lowest AIC results (-3490.038), followed by <i>Model 3</i> (-3382.647), then by <i>Model 2</i> (-3244.964). This comparative evaluation found <i>
+										Model 1</i> with its Gaussian weighted function to be the optimal GWR model for both study locations. </p>
+										
+										<div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/gwr_autocorrelation_and_fit.jpg" alt="" /><p class="caption-txt"><b>Table 3. </b> Residual autocorrelation measures using Moran’s <i>I</i> 
+											and fit statistics (AIC and R<sup>2</sup>) for all GWR model parameters of study locations. For R<sup>2</sup>, ** indicates the Quasi-global R<sup>2</sup>.</span></div>
+										
+										<p>According to <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"> Comber et al. (2022) </a> a well-specified GWR model, the residuals should not exhibit spatial autocorrelation. A Moran's <i>I</i> value close to 0 with a non-significant <i>p</i>-value is
+										 indicative of this. However, the continued presence of significant spatial autocorrelation in the residuals after applying GWR suggests that local variations might not be fully captured 
+										by GWR. This can be attributed to the GWR assumption of predictors operating at the spatial scale. Thus, the GWR models may not accurately represent the predictor-target dynamic operating
+										 at a specific location, indicating that predictors may vary at different bandwidths. </p>
+										
+										<h5 id="Method5.3">Multiscale geographically weighted regression (MGWR) and autocorrelated residuals </h5>
+										<p>The third step of the primary model selection process is the undertaking of the MGWR analysis. This will examine how predictors operate at different scales of relationships to the 
+										dependent, at a global or local scale. For this MGWR, the following will be investigated: (i) the estimated bandwidths (ii) evidence for residual autocorrelation, and (iii) the fit of MGWR
+										 itself.<br>
+										
+										The estimated MGWR fixed and adaptive distance bandwidths were performed using the GWmodel::gwr.multiscale() function and is assessed in <i>Table 4</i>. In Site A, the maximum 
+										number of neighbours for a predictor under an adaptive bandwidth is 331 (the number of observations at the most expansive point of the study area), while the maximum number of neighbours 
+										for fixed bandwidth is 1369 (the maximum distance between two locations). Whereas for Site B, the maximum number of neighbours under an adaptive and fixed bandwidth is 998, and 3494, respectively. </p>
+										
+										
+										<div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/mgwr_individual_bandwidths.jpg" alt="" /><p class="caption-txt"><b>Table 4. </b> The fixed bandwidths in metres (max = 3494 m) for different models arising from an MGWR. For both sites, * indicates an adaptive bandwidth (max = 998).</p></span></div>
+										
+										
+										<p> On examining the fixed bandwidth results, distinct patterns of scale are evident from each predictor relationship to the target variable, NDMI. For Site A, the MGWR bandwidths for 
+											<i>Aspect</i> and <i>Flow direction</i> strongly point towards the maximum global bandwidth of 1369m obtaining to <i>Aspect</i>, while <i>Flow direction</i> is valued at 1028m.
+											 Whereas, <i>Slope</i> has bandwidths of about three-fourths of the global one. Both the bandwidths of the <i>Intercept</i> and <i>Elevation</i> for Site A, indicate strong local 
+											 influence in the dataset, with a bandwidth of 143m, and 404m, respectively. For Site B, the maximum bandwidth in the table is <i>Flow direction</i> of 3494m, which suggests global influence, <i>Elevation</i>, <i>Slope</i> and <i>Aspect</i> showing bandwidths of 986m, 825m, and 901m, 
+										respectively, towards the middle, but far from the maximum, so these will be considered to have local influence in this investigation. <br>
+										  
+										Spatial autocorrelation in the residuals is assessed for all model types, using the estimates and their significance from Morans' <i>I</i>, which is given in <i>Table 5</i>, coupled with the 
+										MGWR fit statistics. For each model of MGWR, the results are compared to previous model types in <i>Table 2</i> (for the OLS regression model) and <i>Table 3</i> (for the GWR model). 
+										Evident in all model scenarios of MGWR, residual autocorrelation is now negligible and insignificant, while model fit shows improvements in all model-to-site scenarios in the previous
+										 model types. Examining the fixed and adaptive model for each study location, we see that fixed model scenarios show improvements across all Morans' <i>I</i> and model fit statistics.</p>
+										
+										
+										 <div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/mgwr_autocorrelation_and_fit.jpg" alt="" /><p class="caption-txt"><b>Table 5. </b> MGWR residual autocorrelation measures using Moran’s <i>I</i> and fit statistics.</p></span></div>
+										
+										
+										
+										
+										<h5 id="Method5.4">Choice of primary model</h5>
+										<p>The results of the initial linear regression, GWR, and MGWR analyses has guided the choice of this primary model selection. Firstly, from the linear regression analysis, the Ordinary
+										 Least Squares (OLS) regression model appeared unable to address spatial autocorrelation, and in explaining the variance of the predictor-to-response relationships. Secondly, the GWR 
+										analysis indicated that while the autocorrelation of residuals was mostly non-existent, five out of the six models displayed significant statistical relevance, leading to the rejection of
+										 the null hypothesis. This suggests that the GWR largely failed to capture the local variance inherent in the dataset. Thirdly, in the MGWR analysis, all models emerged as strong choices;
+										 autocorrelated residuals were evidently reduced in the estimates, reflected by their insignificance (p-value = 1). This is attributed to the distinct bandwidth selection for each 
+										predictor variable. Notably, there was a consistent improvement in model performance from OLS through to GWR. For selecting the primary model, the MGWR with a fixed bandwidth distance
+										 stood out as the most optimal choice amongst the 12 models evaluated in this selection procedure. While the MGWR employing an adaptive kernel bandwidth was a close contender, it was not
+										 chosen as the primary model due to its relatively inferior performance across all statistical measures when compared to the MGWR with a fixed bandwidth distance. </p>
+										
+										
+										<h5 id="Method5.5">Investigating multicollinearity in the primary model</h5>
+										<p>Multicollinearity is explored in MGWR with a fixed bandwidth distance for both sites, employing the correlation coefficient (CC) matrix via the <i>cor()</i> function in R. The presence of
+										 multicollinearity can adversely influence the estimation of coefficients and the determination of optimal bandwidths when multiple explanatory variables exhibit correlations. This co-sharing
+										of information complicates the interpretative process <a href= "https://iopscience.iop.org/article/10.1088/1742-6596/949/1/012009/pdf">(Daoud. J, 2017)</a>. From <i>Table 6</i>, representing Site A, multicollinearity is evidenced by coefficients exceeding 0.70 or falling below -0.70. 
+										Notably, <i>Elevation</i> exemplifies pronounced multicollinearity of -0.98 in conjunction with the <i>Intercept</i> variable. In the context of Site B, detailed in <i>Table 7</i>, 
+										multicollinearity is further evident: between <i>Intercept</i> and <i>Elevation</i> (-0.98), <i>Elevation</i> and <i>Flow direction</i> (0.77), and <i>Intercept</i> and <i>Flow 
+										direction</i> (-0.78). </p>
+										
+										
+										<div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/mgwr_correlation_matrix_site_a.jpg" alt="" /><p class="caption-txt"><b>Table 6. </b> Correlation coefficient (CC) matrix of the fixed MGWR for Site A.</p></span></div>
+										
+										<div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/mgwr_correlation_matrix_site_b.jpg" alt="" /><p class="caption-txt"><b>Table 7. </b> Correlation coefficient (CC) matrix of the fixed MGWR for Site B.</p></span></div>
+										
+										
+										<p><i>Elevation</i> emerges as the dominant variable for multicollinearity with other variables, likely attributed to its role in the creation of other model variables. The multicollinearity
+										 observed in the <i>Flow direction</i> can be somewhat rationalised by the differences in bandwidths and the varying scales of influence of the variables. For instance, the global
+										 influence of <i>Flow direction</i>, juxtaposed with the localised influence of <i>Elevation</i>, may result in the latter obscuring the broader effects of the <i>Flow direction</i>. Nonetheless, considering
+										 the strong collinearity of <i>Elevation</i> on <i>Flow direction</i>, the MGWR with a fixed bandwidth distance will be revised, excluding the <i>Elevation</i> variable from the models to determine whether multicollinearity will still remain.</p>
+										
+										 <div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/revised_mgwr_correlation_matrix_site_a.jpg" alt="" /><p class="caption-txt"><b>Table 8. </b> Revised correlation coefficient (CC) matrix of the fixed MGWR, excluding elevation from the model for Site A.</p></span></div>
+										
+										 <div class="col-8"><span class="image smallfit"><img src="images/personal/costarica/revised_mgwr_correlation_matrix_site_b.jpg" alt="" /><p class="caption-txt"><b>Table 9. </b> Revised correlation coefficient (CC) matrix of the fixed MGWR, excluding elevation from the model for Site B.</p></span></div>
+										 
+										<p>Upon examination of the revised correlation coefficient (CC) matrix for Site A (<i>Table 8</i>), the relationships between variables appear more distinct and less collinear. For instance,
+										 the correlation between <i>Intercept</i> and the other three variables remains weak, and the relationship between <i>Slope</i> and <i>Flow direction</i> (-0.47) stands out as moderate in
+										 strength, suggesting a negative association. Examining Site B (<i>Table 9</i>), a similar trend is observed. While there's a moderate negative correlation between <i>Slope</i> and <i>Aspect</i> (-0.48),
+										 the correlations amongst other variables remain relatively weak. Of particular note is the weak correlation between <i>Slope</i> and <i>flow direction</i> (0.00), suggesting that their
+										 influence on the response variable is relatively independent of each other. Here it is seen that the removal of the Elevation variable significantly reduced multicollinearity in our models.</p>	
+										 
+										 <h4 id="Method6">Site comparison and visualisation</h4>
+										 <p>To explore the variability detected by the optimal model, we assessed the relationship between the predictor variables and the NDMI into three folds: 1) spatial variability of local coefficient, 2) direction trend of estimates 
+											(i.e., whether predictors have a positive or negative relationship with NDMI), followed by the predictors 3) relative magnitude. Similar to <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"> Comber et al. (2022) </a>, 
+											spatial heterogeneity was examined by visualising each variable's local coefficient estimates, with those significantly different to zero highlighted (i.e., p-values
+											< 0.05) in QGIS. While the variability among predictors, was conducted using R, where a comparative analysis of both the directional trend and their associated magnitudes was assessed. For ease of comparison between predictors and site location, 
+											the same method from <a href= "https://www.sciencedirect.com/science/article/abs/pii/S2210670721004418"> Song et al. (2017) </a> was used to convert the negative local estimates to their absolute value. </p>
+
+
+									<h3 id="Results">Results</h3>	
+									<h4 id="Result1">Comparative Boxplot Analysis</h4>
+									<p>The comparative difference of the NDMI values between site location is examined in <i>Figure 7</i> and <i>Table 10</i>, where differences across the 
+										minimum, first quartile, median, mean, third quartile, and maximum values are found. In <i>Figure 7</i>, the overall trend suggest minimal differences
+										 between study location, with Site B exhibiting a larger range between its 1<sup>st</sup> and 3<sup>rd</sup> quartile range. Site A, however, is shown to
+										 exhbit higher presence of outliers on either ends of the whiskers compared to Site B. <i>Table 10</i>, providing a more nuanced look into the NDMI
+										 distribution, shows Site A having an NDMI range of 0.04472 to 0.44176, with an average (mean) of 0.24601. The middle 50% of the data, delineated by the
+										 first and third quartiles, extended from 0.21046 to 0.28347, indicating a relatively spread-out distribution. The median NDMI value for Site A was 0.24360.
+										 In comparison, Site B presented NDMI values between 0.06986 and 0.42074, with a mean value of 0.24556. The interquartile range was from 0.19952 to 0.28768,
+										 suggesting a similarly spread distribution of data. The median NDMI for Site B was 0.24359, virtually identical to that of Site A.</p>	
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-8"><span class="image fit"><img src="images/personal/SiteComparison_Boxplot.jpeg" alt="" /><p class="caption-txt"><b>Figure 7. </b> Boxplot of NDMI Comparison across Sites.</p></span>											
+											 </div>
+
+											<div class="col-4"> 
+												<figure>
+												<span class="image fit"><img src="images/personal/costarica/boxplot_summary_statistics.jpg" alt="" /><figcaption><p class="caption-txt"><b>Table 10. </b> Descriptive Statistics of NDMI Values for Site A and Site B.</p></figcaption></span></figure></div>											
+									</div>	
+									
+									<div class="inner">
+										<h4 id="Result2">Terrain dynamics</h4>
+										<p><i>Figure 8</i> presents a clear distinction in terrain composition between the forested agricultural area (Site A) and the open agricultural area (Site B). The <i>Elevation</i> profile of Site A 
+											indicates a higher altitude relative to Site B, coupled with varying degrees in <i>Slope</i>. In contrast, Site B exhibits a more homogeneous topography, characterised by a consistently
+											 lower <i>Elevation</i> and minimal <i>Slope</i> variation, with the exception of the surrounding extent of forested areas. Notably, Site B demonstrates considerable heterogeneity in <i>
+											Aspect</i> and <i>Flow direction</i>, most likely attributed to the limited variability in <i>Elevation</i> and <i>Slope</i>.</p>  
+											
+										
+										<div class="col-8"><span class="image fit"><img src="images/personal/costarica/Terrain_comparison.v2.png" alt="" /><p class="caption-txt"><b>Figure 8. </b> Map depicting elevation, slope, aspect, and flow direction across Site A (Forested Agriculture) and Site B (Open Agriculture).</p></span>											
+											 </div>
+											
+									<div class="inner">
+									<h4 id="Result3">Site comparison of local coefficients</h4>
+									<p>The distribution of local coefficient estimates in <i>Figure 9</i> reflects the relationships to the target variable (NDMI) at separate spatial scales. For Site B, the coefficients of 
+										<i>Slope</i> and <i>Aspect</i>, and for Site A, the coefficients of <i>Flow direction</i> show clear signs of fluctuations between the positive and negative local coefficients. In addition 
+										to changes in the significance at the local level. The regression relationship between the <i>Intercept</i> and NDMI showed consistent significance for both sites. In contrast, 
+										<i>Flow direction</i> at Site B which shows the opposite, with consistent insignificant relationships across space. These three relationships are distinct from the other five regression 
+										relationships, which displays variable degree of consistency in significance at their respective sites. </p>  
+										
+									
+									<div class="col-8"><span class="image fit"><img src="images/personal/costarica/MGWR_coefficient_between_sites.png" alt="" /><p class="caption-txt"><b>Figure 9. </b> Spatial Variation of Local Coefficient Estimates from Fixed MGWR Analysis (significant values with <i>p </i>≤ 0.05 highlighted) </p></span>											
+										 </div>
+
+									<p>The direction and magnitude of these local coefficients were further explored in <i>Figure 10</i>. In terms of the direction flow (<i>Figure 10 a-d</i>), both the <i>Intercept</i> and 
+										<i>Slope</i> coefficients for Site A and Site B reflected strong positive phases in local estimates, with <i>Aspect</i> facilitating a mix of positive and negative signs of estimates in 
+										 Site B alone.  The regression relationship for <i>Flow direction</i> in Site B, displayed towards the positive phase, although with minimal deviations from zero. Examining the magnitude of
+										 the coefficients (<i>Figure 10 e-h</i>), we see varying results. Subtle variations are seen with the <i>Intercept</i> for Site A exceeding Site B, while <i>Aspect</i> in Site B surpasses Site
+										 A. Larger differences in magnitude becomes more apparent in the <i>Slope</i> and <i>Flow direction</i> coefficients between sites. Specifically, Site B outstrips that of Site A for <i>
+										 Slope</i>, whereas Site A is shown to dominate over Site B for the <i>Flow direction</i> coefficient. </p>
+									
+									<div class="col-8"><span class="image fit"><img src="images/personal/costarica/directmag_coefficient_comparison.jpeg" alt="" /><p class="caption-txt"><b>Figure 10. </b> Dynamics of local coefficient across agricultural sites as analysed by the fixed MGWR model. Direction trends for each site are presented in panels a to d, 
+										while their relative magnitudes are illustrated in panels e-h. The coefficient estimates shown in panels e-h were computed to their absolute value for easier comparison, where the average of 
+										the predictor estimates are shown between each site locations.</p></span>											
+										 </div>	
+									
+																	
+                                    <h3 id="Discussion">Disccusion</h3>
+									<div class="inner">
+										<p>The study aimed to evaluate the moisture levels across two distinct agricultural settings, Site A (forested agricultural area) and Site B (open-spaced agricultural area), with a focus
+											on the interconnectedness of topographical factors influencing soil moisture dynamics. From the given results, several interpretations can be drawn related to the objectives of the study: </p>
+										   
+										   <h4 id="Disccusion1">Differences in moisture</h4>
+										   <p>The comparative analysis of NDMI values between both sites in <i>Figure 7</i>, revealed marginal differences in moisture  capacities between site locations. Noticeable differences can
+											be observed in the minimum and maximum range of NDMI value, with crops in Site A, with forested agricultural areas, displaying slightly higher retention of moisture than those in Site B,
+											with open-spaced agriculture. For instance, the lower-end range of the NDMI is slightly higher in Site A compared to Site B. This could suggest that the least hydrated crop in the
+											forested area is still able to retain more moisture than the least hydrated crops in the open space agricultural site. Highlighting the difference in environmental conditions between site
+											locations, regarding moisture retention capabilities. With NDMI exhibiting higher-end ranges for Site A, could imply that the most hydrated crops, in forested areas have more moisture
+											retention capabilities than the most hydrated crops in Site B. In the 3rd Quartile (75th percentile), however, the NDMI value is slightly higher for Site B, which suggests that the top
+											25% of observations indicate slightly higher moisture in the open-spaced agriculture compared to the forested area. This could imply external influences outside our investigation, such as irrigation methods, soil
+											type, and crop type, which might differ between site locations, causing these differences in NDMI seen in <i>Figure 7</i>. </p>
+										   
+										   
+										   <h4 id="Disccusion2">Topographical influences</h4>
+										   <p>The observations demonstrated in <i>Figure 7</i> are further strengthened in <i>Figure 9</i> when we examine the predictor-specific local coefficients between the site locations. Here, all except
+											<i>Flow direction</i> in Site B, displays higher value in both the lower and higher ends of the coefficient estimates, indicating high variability in individual topographical factors enhancing
+											and/or digressing the capabilities of moisture in open agricultural areas. Interestingly, the <i>Slope</i> and <i>Aspect</i> for Site A only show coefficient estimates in the midranges, which is
+											reflected in the magnitude of both variables (<i>Figure 10f</i>, and <i>Figure 10g</i>) being considerably lower for forested areas. Despite being at a higher elevation, with a high presence of
+											variation in <i>Slope</i> (<i>Figure 8</i>), which would encourage higher rates of run-off in the area <a href= "https://www.mdpi.com/2073-4441/7/6/2990" > (Mu et al., 2015)</a>. These consistent estimates hint at an almost negligible effect on moisture content for forested
+											environments, demonstrating a higher resilience to the influence of topographical effects. This is most likely due to the presence of higher forest cover acting as a barrier for direct
+											run-off, influencing the microclimate of the local area <a href= "https://www.researchgate.net/publication/265142938_From_Forest_to_Farmfields_Changes_in_Land_Use_in_Undulating_Terrain_of_Northeast_Thailand_at_Different_Scales_during_the_Past_Century"> (Vityakon et al., 2004)</a>. 
+										   
+										   <br> Regarding the insignificance shown in <i>Flow direction</i> for Site B, this causation implies a weak role of <i>Flow direction</i> at the spatial scale of our sites. If we examine the terrain 
+										   dynamics in Site B (Figure 8), the minimal variation shown in Elevation and Slope would impact the degree of influence that <i>Flow direction</i> can have in an area <a href= "https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2010WR009961"> (Zhou et al., 2011)</a>. However, the scale of
+											influence is an important consideration to be made here, as <i>Table 4</i> shows a considerably high global bandwidth for the <i>Flow direction</i> of 3494m between two observations at its maximum.
+											This is comparably larger than the <i>Flow direction</i> shown in Site A of 1028m, which suggests a greater influence of <i>Flow direction</i> at a broader scale than our investigation is currently set
+											to. This can cause this influence on becoming insignificant when compared to other variables operating in the same site that has a more localised effect. </p>
+										   
+										   <h4 id="Disccusion3">Challenges</h4>
+										   <p>The relationship between moisture and topographical features is a complex process, particularly when analysed at a localised scale, requiring a transdisciplinary approach to understand
+											what the data represent. One of the biggest drawbacks of this investigation was the absence of time-series analysis, caused by the persistent cloud cover of this region. Therefore, the
+											findings presented in this investigation must be approached with a degree of caution, as the observed variation can easily be attributed to natural fluctuations in moisture levels that
+											occur on a daily, weekly, and monthly scale. Furthermore, another challenge might lie in interpreting the role of topographical attributes in moisture dynamics. While the local
+											coefficients provide clues into this, ground-truthing is nonetheless necessary to fortify our findings. Another impediment was the lack of local knowledge, particularly concerning the
+											ownership and management practices of the agricultural plots, which can encompass varying irrigation methods, crop rotation, and crop type, all contributing to the misinterpretation of
+											the data. Finally, the low 20m spatial resolution of the Sentinel-2 dataset, may have been insufficient to capture the more intricate relationships of topographical features to the NDMI.</p>
+										   
+										   <h4 id="Disccusion4">Recommendations</h4>
+										   <p>As the study progresses to the master thesis stage, the integration of ground truth data will be pivotal to the validation of our findings. Furthermore, selecting an alternative study
+											area with a lower incidence of cloud cover could provide a more suitable environment to assess agricultural resilience to drought conditions. Obtaining the data directly, possibly by an
+											unmanned aerial vehicle (UAV), would be hugely beneficial, not only for the improved spatial resolution but also to facilitate the acquisition of local insights into the area in question.
+											Considering the additional environmental factors, such as land surface temperature, precipitation, relative humidity, photosynthetically active radiation, and evapotranspiration, would
+											help minimise the unexplained variance within our models. Nevertheless, the resolution constraint of datasets from instruments like, MODIS (500m) and ECOSTRESS (70m) should be carefully
+											considered. The acquisition of data from either instrument would subsequently change the focus of our investigation to a larger spatial scale. This could introduce scale-dependent
+											discrepancies in the investigation, given how agroforestry is typically managed by individual landowners on small-scale farms.</p>
+										   										   
+									
+									<h3 id="Conclusion">Conclusion</h3>
+									<div class="inner">
+										<p>While the moisture dynamics between forested and open-spaced agricultural areas exhibit subtle differences, the nuanced interplay of topographical factors, highlighted in this 
+											investigation, has shown clear distinctions between the two areas. Helping to understand how two opposing agricultural areas can influence the soil moisture in an area. However, the lack
+											 of temporal analysis has resulted in the findings leaning on the side of caution when interpreting the data. Nonetheless, this preliminary investigation has been extremely informative for
+											 my upcoming master thesis, and will no doubt help me in designing a suitable framework for my methodology to accurately investigate the theme of my planned thesis.</p>
+								
+									<a href='#' class="stt" title="scroll to top"></a>
+
+								</section>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/zak-inglebright/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/inglebright-earth" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:inglebright.earth@gmail.com?subject=subject text" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
