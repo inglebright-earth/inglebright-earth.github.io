@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Zak's e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Portfolio</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="academic.html">Academic Projects</a></li>
+                  <li><a href="personal.html">Personal Projects</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Main -->
+      <article id="main">
+        <header>
+          <h2>
+            A comparison of moisture between two distinct agricultural settings
+            (Forested vs. Open agriculture) - 2023
+          </h2>
+        </header>
+        <section class="wrapper style5">
+          <div class="inner">
+            <section>
+              <p>
+                Using the works of
+                <a
+                  href="https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"
+                >
+                  Comber et al. (2022) </a
+                >, I wanted to know more about Geographically Weighted
+                Regression (GWR), a regression analysis that can detect if and
+                how relationships between the response and predictor variables
+                vary across different geographical locations. Thus, I decided to
+                use Comber's workflow and carry out my own GWR analysis, which
+                assessed how topographic variables, such as elevation and slope,
+                influence moisture between a forested and an open-spaced
+                agricultural area. <br />
+
+                <br />
+                Since I would struggle to find areas specifically used for
+                agroforestry via satellite imagery, I focused on the area
+                surrounding the Finca Luna Nueva Lodge in Costa Rica (see
+                <b>Figure 1</b>), known for its regenerative farming practices.
+                Here, I identified two sites: Site A, surrounding the lodge,
+                covered in approximately 61% forest cover, and Site B, roughly
+                ten kilometers to the east, consisting mostly of sparse
+                vegetation and open fields, with 19.4% forest cover. Both study
+                sites are approximately 6,500 m² in area.
+              </p>
+              <div class="col-6">
+                <span class="image fit"
+                  ><img
+                    src="images/personal/costa_rica_overview_map_6.png"
+                    alt=""
+                  />
+                  <p class="caption-txt">
+                    <b>Figure 1. </b>Overview of the general location of the two
+                    study areas, highlighting the difference in the disparity
+                    forest cover, located in the Alajuela Province, Costa Rica.
+                  </p></span
+                >
+              </div>
+
+              <p>
+                For this investigation, I used the Random Forest classification
+                algorithm to detect land use and land cover classes (<b
+                  >Figure 2</b
+                >) from my Sentinel-2 data and extracted values in a NDMI, where
+                the agricultural classes overlapped. From these initial steps, I
+                was able to gather all the necessary variables to carry out my
+                GWR analysis, allowing me to gain a strong understanding of the
+                work and steps needed to perform such an analysis.
+              </p>
+              <div class="col-1">
+                <span class="image fit"
+                  ><img
+                    src="images/personal/SuperV_Classification.png"
+                    alt=""
+                  />
+                  <p class="caption-txt">
+                    <b>Figure 2. </b>Dislayed output of the random forest model
+                    for the supervised classification of our study areas,
+                    defined by five distinct landcover types.
+                  </p></span
+                >
+              </div>
+
+              <p>
+                This was far from perfect, as I faced many unforeseen obstacles.
+                For one, my study area in the tropics was persistently covered
+                by clouds, and the differing topography of my study areas made
+                comparability difficult both spatially and temporally.
+                Nevertheless, this project was a valuable learning experience,
+                as I learned what factors need to be considered for a successful
+                GWR analysis.
+              </p>
+              <h3>Results</h3>
+              <div class="inner">
+                <p><b>Figure 3</b> shows changes in the relationship strength between the target variable (moisture values) and predictor variables (such as Slope, Aspect, or Flow direction). For instance, in Site A, Flow direction shows significant spatial fluctuations, with significant (<0.05) negative values at the top of the study area, indicating a non-random negative relationship with moisture. In contrast, Site B consistently shows insignificant results for Flow direction.</p>
+                <div class="col-8"><span class="image fit"><img src="images/personal/costarica/MGWR_coefficient_between_sites.png" alt="" /><p class="caption-txt"><b>Figure 3. </b> Spatial Variation of Local Coefficient Estimates from Fixed MGWR Analysis (significant values with <i>p </i>≤ 0.05 highlighted) </p></span>											
+              
+              </div>
+            </section>
+          </div>
+        </section>
+      </article>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/zak-inglebright/"
+              class="icon brands fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/inglebright-earth"
+              class="icon brands fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:inglebright.earth@gmail.com?subject=subject text"
+              class="icon solid fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Untitled</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
