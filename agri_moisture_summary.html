@@ -46,90 +46,165 @@
             (Forested vs. Open agriculture) - 2023
           </h2>
         </header>
-        <section class="wrapper style5">
-          <div class="inner">
-            <section>
-              <p>
-                Using the works of
-                <a
-                  href="https://onlinelibrary.wiley.com/doi/full/10.1111/gean.12316"
-                >
-                  Comber et al. (2022) </a
-                >, I wanted to know more about Geographically Weighted
-                Regression (GWR), a regression analysis that can detect if and
-                how relationships between the response and predictor variables
-                vary across different geographical locations. Thus, I decided to
-                use Comber's workflow and carry out my own GWR analysis, which
-                assessed how topographic variables, such as elevation and slope,
-                influence moisture between a forested and an open-spaced
-                agricultural area. <br />
+        <section>
+          <p>
+            This study was a preliminary investigation aimed at exploring the
+            viability of a potential idea for my master’s thesis—specifically,
+            whether agroforestry practices in tropical regions might offer
+            greater resilience to drought than open-field monocultures. By
+            comparing soil moisture dynamics between two distinct agricultural
+            settings in Costa Rica—<em>forested agriculture</em> (Site A) and
+            <em>open-spaced agriculture</em> (Site B)—the study sought to
+            understand how topographic variation and vegetation cover influence
+            moisture retention.
+          </p>
 
-                <br />
-                Since I would struggle to find areas specifically used for
-                agroforestry via satellite imagery, I focused on the area
-                surrounding the Finca Luna Nueva Lodge in Costa Rica (see
-                <b>Figure 1</b>), known for its regenerative farming practices.
-                Here, I identified two sites: Site A, surrounding the lodge,
-                covered in approximately 61% forest cover, and Site B, roughly
-                ten kilometers to the east, consisting mostly of sparse
-                vegetation and open fields, with 19.4% forest cover. Both study
-                sites are approximately 6,500 m² in area.
-              </p>
-              <div class="col-6">
-                <span class="image fit"
-                  ><img
-                    src="images/personal/Costa_Rica_Study_Area_Overview_Map.png"
-                    alt=""
-                  />
+          <p>
+            Using Sentinel-2 data, land use and land cover were classified with
+            97.32% accuracy through a Random Forest model. Moisture levels were
+            quantified using the Normalized Difference Moisture Index (NDMI),
+            and spatial regression models—<em>OLS, GWR, and MGWR</em>—were
+            applied to assess how topographic variables (slope, aspect,
+            elevation, and flow direction) correlate with moisture patterns.
+          </p>
+
+          <p>
+            Although NDMI values showed only marginal differences between the
+            two sites, topographic factors were found to interact with moisture
+            levels in complex, spatially variable ways. The MGWR model was the
+            most effective in capturing these nuances by allowing relationships
+            to vary across space and scale.
+          </p>
+
+          <h3>Key Challenges</h3>
+          <ul>
+            <li>
+              Persistent cloud cover prevented time-series analysis, limiting
+              insights to a single date.
+            </li>
+            <li>
+              Site selection was not optimal; terrain differences between sites
+              complicated direct comparison.
+            </li>
+            <li>
+              Lack of local knowledge (e.g., crop types, irrigation practices)
+              made NDMI interpretation difficult.
+            </li>
+            <li>
+              The 20m resolution of Sentinel-2 may have been too coarse to
+              capture fine-scale terrain effects.
+            </li>
+          </ul>
+
+          <p>
+            Despite these limitations, the study was highly valuable in shaping
+            my understanding of the topic, highlighting methodological
+            considerations and identifying areas needing refinement. It
+            underscores the importance of temporal data, careful site selection,
+            and local context when investigating the potential role of
+            agroforestry in climate resilience.
+          </p>
+        </section>
+        <section>
+          <figure>
+            <div class="box alt">
+              <div class="row gtr-50 gtr-uniform">
+                <div class="col-6">
+                  <span class="image fit">
+                    <img
+                      src="images/personal/Costa_Rica_Study_Area_Overview_Map.png"
+                      alt=""
+                    />
+                  </span>
                   <p class="caption-txt">
-                    <b>Figure 1. </b>Overview of the general location of the two
-                    study areas, highlighting the difference in the disparity
-                    forest cover, located in the Alajuela Province, Costa Rica.
-                  </p></span
-                >
-              </div>
-
-              <p>
-                For this investigation, I used the Random Forest classification
-                algorithm to detect land use and land cover classes (<b
-                  >Figure 2</b
-                >) from my Sentinel-2 data and extracted values in a NDMI, where
-                the agricultural classes overlapped. From these initial steps, I
-                was able to gather all the necessary variables to carry out my
-                GWR analysis, allowing me to gain a strong understanding of the
-                work and steps needed to perform such an analysis.
-              </p>
-              <div class="col-1">
-                <span class="image fit"
-                  ><img
-                    src="images/personal/SuperV_Classification.png"
-                    alt=""
-                  />
+                    <em
+                      >Overview of the general location of the two study areas,
+                      highlighting the difference in the disparity forest cover,
+                      located in the Alajuela Province, Costa Rica. Made using
+                      ArcGIS Pro.</em
+                    >
+                  </p>
+                </div>
+                <div class="col-6">
+                  <span class="image fit"
+                    ><img
+                      src="images/personal/Random_Forest_Classification_Sentinel_2.png"
+                      alt=""
+                  /></span>
                   <p class="caption-txt">
-                    <b>Figure 2. </b>Dislayed output of the random forest model
-                    for the supervised classification of our study areas,
-                    defined by five distinct landcover types.
-                  </p></span
-                >
+                    <em
+                      >Dislayed output of the random forest model for the
+                      supervised classification of our study areas, defined by
+                      five distinct landcover types. Made using R.</em
+                    >
+                  </p>
+                </div>
+                <div class="col-6">
+                  <span class="image fit"
+                    ><img
+                      src="images/personal/costarica/Terrain_comparison.v2.png"
+                      alt=""
+                  /></span>
+                  <p class="caption-txt">
+                    <em>
+                      Map depicting terrain dynamics of elevation, slope,
+                      aspect, and flow direction across Site A (Forested
+                      Agriculture) and Site B (Open Agriculture). Made using
+                      ArcGIS Pro.</em
+                    >
+                  </p>
+                </div>
+                <div class="col-6">
+                  <span class="image fit"
+                    ><img
+                      src="images/personal/NDMI_Comparison_Agricultural_Areas.png"
+                      alt=""
+                  /></span>
+                  <p class="caption-txt">
+                    <em
+                      >Comparison of the Normalized Difference Moisture Index
+                      (NDMI) between two agricultural sites: a) Forested
+                      Agriculture and b) Open-Spaced Agriculture. Made using
+                      ArcGIS Pro.</em
+                    >
+                  </p>
+                </div>
+                <div class="col-6">
+                  <span class="image fit"
+                    ><img
+                      src="images/personal/costarica/MGWR_coefficient_between_sites.png"
+                      alt=""
+                  /></span>
+                  <p class="caption-txt">
+                    <em
+                      >Spatial Variation of Local Coefficient Estimates from
+                      Fixed MGWR Analysis (significant values with p ≤ 0.05
+                      highlighted). Made using ArcGIS Pro.</em
+                    >
+                  </p>
+                </div>
+                <div class="col-6">
+                  <span class="image fit"
+                    ><img
+                      src="images/personal/costarica/directmag_coefficient_comparison.jpeg"
+                      alt=""
+                  /></span>
+                  <p class="caption-txt">
+                    <em
+                      >Dynamics of local coefficient across agricultural sites
+                      as analysed by the fixed MGWR model. Direction trends for
+                      each site are presented in panels a to d, while their
+                      relative magnitudes are illustrated in panels e-h. The
+                      coefficient estimates shown in panels e-h were computed to
+                      their absolute value for easier comparison, where the
+                      average of the predictor estimates are shown between each
+                      site locations. Made using R.</em
+                    >
+                  </p>
+                </div>
               </div>
-
-              <p>
-                This was far from perfect, as I faced many unforeseen obstacles.
-                For one, my study area in the tropics was persistently covered
-                by clouds, and the differing topography of my study areas made
-                comparability difficult both spatially and temporally.
-                Nevertheless, this project was a valuable learning experience,
-                as I learned what factors need to be considered for a successful
-                GWR analysis.
-              </p>
-              <h3>Results</h3>
-              <div class="inner">
-                <p><b>Figure 3</b> shows changes in the relationship strength between the target variable (moisture values) and predictor variables (such as Slope, Aspect, or Flow direction). For instance, in Site A, Flow direction shows significant spatial fluctuations, with significant (<0.05) negative values at the top of the study area, indicating a non-random negative relationship with moisture. In contrast, Site B consistently shows insignificant results for Flow direction.</p>
-                <div class="col-8"><span class="image fit"><img src="images/personal/costarica/MGWR_coefficient_between_sites.png" alt="" /><p class="caption-txt"><b>Figure 3. </b> Spatial Variation of Local Coefficient Estimates from Fixed MGWR Analysis (significant values with <i>p </i>≤ 0.05 highlighted) </p></span>											
-              
-              </div>
-            </section>
-          </div>
+            </div>
+          </figure>
         </section>
       </article>
 
