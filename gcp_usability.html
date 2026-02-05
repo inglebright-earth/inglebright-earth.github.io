@@ -1,0 +1,178 @@
+<!doctype html>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Zak's e-Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Portfolio</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="academic.html">Academic Projects</a></li>
+                  <li><a href="personal.html">Personal Projects</a></li>
+                  <li><a href="work.html">Work Experience</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Main -->
+      <article id="main">
+        <header>
+          <h2>
+            Selection of Suitable AQUA Test Sites for Ground Control Point (GCP)
+            Validation (2025)
+          </h2>
+        </header>
+        <section>
+          <div class="content-wide">
+            <h3>Aims and Objectives</h3>
+            <p>
+              This project identified suitable pre-existing AQUA test sites for
+              purchasing and integrating third-party Ground Control Points
+              (GCPs) to independently evaluate the absolute positional accuracy
+              of PlanetScope Independent Reference (IR) imagery.
+            </p>
+            <b>Objectives</b>
+            <ul>
+              <li>
+                Determine which AQUA test sites spatially intersect with
+                archived GCPs.
+              </li>
+              <li>
+                Identify the most suitable sites for validating positional
+                accuracy using third-party GCPs.
+              </li>
+            </ul>
+
+            <b>Minimum Site Standards</b>
+            <ol>
+              <li>Each test site must contain at least 3 GCPs.</li>
+              <li>GCPs should be evenly distributed (avoid clustering).</li>
+              <li>Preference is given to sites with higher-accuracy GCPs.</li>
+            </ol>
+            <br />
+            <h3>Methodology</h3>
+            <p>
+              The original plan was to manually assess 600+ sites. Instead, a
+              QGIS Python workflow was developed to automate screening and make
+              the process reusable for future studies. Two key challenges
+              related to distribution and accuracy were addressed as follows.
+            </p>
+            <div class="col-6">
+              <span class="image fit"
+                ><img src="images/work/gcp_usability_workflow.png" alt=""
+              /></span>
+            </div>
+
+            <h4>
+              Criteria 2: Spatial Distribution (Nearest Neighbour Index, NNI)
+            </h4>
+            <p>
+              The Nearest Neighbour Index (NNI) was used to describe spatial
+              patterns:
+            </p>
+            <ul>
+              <li><strong>NNI &lt; 1</strong> → clustered</li>
+              <li><strong>NNI ≈ 1</strong> → random</li>
+              <li><strong>NNI &gt; 1</strong> → dispersed (preferred)</li>
+            </ul>
+            <p>
+              <strong>Issue:</strong> The built-in QGIS NNA tool estimates the
+              study area from the GCP bounding box, not the test site polygon.
+              <br />
+              <strong>Solution:</strong> A custom Python implementation computed
+              NNI using the actual test site geometry.
+            </p>
+            <div class="col-6">
+              <span class="image fit"
+                ><img src="images/work/NNI_example.png" alt=""
+              /></span>
+            </div>
+
+            <h4>Criteria 3: GCP Accuracy (Weighted Average)</h4>
+            <p>A weighted-average accuracy score was calculated per site:</p>
+            <ul>
+              <li>Lower weight → higher-quality GCPs</li>
+              <li>Higher weight → lower-quality GCPs</li>
+            </ul>
+
+            <h2>Results</h2>
+            <p>
+              14 suitable candidate sites were identified for purchasing
+              surveyed GCPs.
+            </p>
+            <div class="col-8">
+              <span class="image fit"
+                ><img src="images/work/gcp_results.png" alt=""
+              /></span>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/zak-inglebright/"
+              class="icon brands fa-linkedin"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/inglebright-earth"
+              class="icon brands fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:inglebright.earth@gmail.com?subject=subject text"
+              class="icon solid fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Untitled</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

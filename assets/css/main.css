@@ -318,10 +318,18 @@ textarea {
 }
 
 a {
-  -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-  -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-  -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  -moz-transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
+  -webkit-transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
+  -ms-transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
   border-bottom: dotted 1px;
   color: inherit;
   text-decoration: none;
@@ -2631,10 +2639,18 @@ button,
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -moz-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -webkit-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -ms-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   background-color: transparent;
   border-radius: 3px;
   border: 0;
@@ -3659,6 +3675,11 @@ body.is-menu-visible #menu {
   -ms-transform: translateX(0);
   transform: translateX(0);
 }
+.content-wide {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
 
 /* Header */
 
@@ -3805,10 +3826,18 @@ body.is-menu-visible #menu {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
-  -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
-  -ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  -moz-transition:
+    -moz-transform 0.5s ease,
+    opacity 0.5s ease;
+  -webkit-transition:
+    -webkit-transform 0.5s ease,
+    opacity 0.5s ease;
+  -ms-transition:
+    -ms-transform 0.5s ease,
+    opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
   display: inline-block;
   font-size: 1.75em;
   opacity: 1;
@@ -3855,10 +3884,18 @@ body.is-menu-visible #menu {
 }
 
 #banner .more {
-  -moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
-  -webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
-  -ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
-  transition: transform 0.75s ease, opacity 0.75s ease;
+  -moz-transition:
+    -moz-transform 0.75s ease,
+    opacity 0.75s ease;
+  -webkit-transition:
+    -webkit-transform 0.75s ease,
+    opacity 0.75s ease;
+  -ms-transition:
+    -ms-transform 0.75s ease,
+    opacity 0.75s ease;
+  transition:
+    transform 0.75s ease,
+    opacity 0.75s ease;
   -moz-transition-delay: 3.5s;
   -webkit-transition-delay: 3.5s;
   -ms-transition-delay: 3.5s;
@@ -4026,25 +4063,17 @@ body.is-preload #banner:after {
 
 #main > header {
   padding: 12em 0 10em 0;
-  background-image: -moz-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -ms-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image:
+    linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
   background-attachment: fixed;
   background-position: center center;
@@ -4178,25 +4207,17 @@ body.is-mobile #main > header {
 /* Landing */
 
 body.landing #page-wrapper {
-  background-image: -moz-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -ms-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image:
+    linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
   background-attachment: fixed;
   background-position: center center;
@@ -4215,25 +4236,17 @@ body.is-mobile.landing #page-wrapper {
 
 body.is-mobile.landing #banner,
 body.is-mobile.landing .wrapper.style4 {
-  background-image: -moz-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: -ms-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image:
+    linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/usgs.jpg");
   background-position: center center;
   background-repeat: no-repeat;
